@@ -48,7 +48,15 @@ public interface Shape {
      *
      * @return угол поворота фигуры.
      */
-    int getRotation();
+
+    default int getRotation() {
+        return 0;
+    };
+
+    default void rotate(int angleOfRotation){
+
+    };
+
 
     /*
      * TODO: изменить определение метотода 'getRotation()'

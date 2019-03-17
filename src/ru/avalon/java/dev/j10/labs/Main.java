@@ -20,5 +20,14 @@ public class Main {
          * 2. Найти в массиве 'shapes' фигуру с максимальной
          *    площадью.
          */
+        for (int i = 0; i < 20; i++){
+            shapes[i] = factory.getInstance();
+        }
+
+        Shape shapeWithMaxArea = shapes[0];
+        for (int i = 1; i < 20; i++){
+            if (shapeWithMaxArea.getArea() < shapes[i].getArea())
+                shapeWithMaxArea = shapes[i];
+        }
     }
 }

@@ -1,6 +1,6 @@
 package ru.avalon.java.dev.j10.labs.factories;
 
-import ru.avalon.java.dev.j10.labs.shapes.Shape;
+import ru.avalon.java.dev.j10.labs.shapes.*;
 
 /**
  * "Фабрика" фигур, возвращающая фигуры случайной природы.
@@ -41,7 +41,19 @@ public class RandomShapeFactory implements ShapeFactory {
         /*
          * TODO: Реализовать метод 'getInstance()' класса 'RandomShapeFactory'
          */
+        Random randomType = new Random(5);
 
-        return null;
+        switch (randomType.next()) {
+            case 0:
+                return new RandomCircleFactory().getInstance();
+            case 1:
+                return new RandomRectangleFactory().getInstance();
+            case 2:
+                return new RandomRhombusFactory().getInstance();
+            case 3:
+                return new RandomTrapeziumFactory().getInstance();
+            default:
+                return new RandomTriangleFactory().getInstance();
+        }
     }
 }
