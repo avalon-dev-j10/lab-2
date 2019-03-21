@@ -1,15 +1,15 @@
 package ru.avalon.java.dev.j10.labs.factories;
 
-import ru.avalon.java.dev.j10.labs.shapes.Shape;
-import ru.avalon.java.dev.j10.labs.shapes.Trapezium;
-import ru.avalon.java.dev.j10.labs.shapes.Triangle;
+import ru.avalon.java.dev.j10.labs.shapes.*;
 
 public class RandomTriangleFactory implements ShapeFactory {
 
-    private Random randomParameter = new Random(100);
-
     @Override
     public Shape getInstance() {
-        return new Triangle(randomParameter.next(), randomParameter.next(), randomParameter.next());
+        Point firstPoint = new RealPoint(randomParameter.next(), randomParameter.next());
+        Point secondPoint = new RealPoint(randomParameter.next(), randomParameter.next());
+        Point thirdPoint = new RealPoint(randomParameter.next(), randomParameter.next());
+
+        return new Triangle(firstPoint, secondPoint, thirdPoint);
     }
 }

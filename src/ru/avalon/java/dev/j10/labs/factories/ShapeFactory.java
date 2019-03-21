@@ -24,6 +24,8 @@ public interface ShapeFactory {
      *
      * @return экземпляр типа {@link Shape}
      */
+    Random randomParameter = new Random(100);
+
     Shape getInstance();
 
     static ShapeFactory random() {

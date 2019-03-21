@@ -28,24 +28,27 @@ public class Trapezium implements Polygon {
     private float area;
     private int rotation = 0;
 
-    public Trapezium(float topBase, float bottomBase, float leftLateral, float rightLateral){
-        this.topBase = topBase;
-        this.bottomBase = bottomBase;
-        this.leftLateral = leftLateral;
-        this.rightLateral = rightLateral;
+    //Строим трапецию по четырем точкам
+    public Trapezium(Point firstPoint, Point secondPoint, Point thirdPoint, Point fourthPoint){
+        topBase = Line.calculateSide(firstPoint, secondPoint);
+        bottomBase = Line.calculateSide(secondPoint, thirdPoint);
+        leftLateral = Line.calculateSide(thirdPoint, fourthPoint);
+        rightLateral = Line.calculateSide(fourthPoint, firstPoint);
 
         perimeter = topBase + bottomBase + leftLateral + rightLateral;
 
-        //Определяем площадь трапеции по формуле Герона
-        float halfOfPerimeter = perimeter/2;
+        //Определяем площадь трапеции
+        /*float halfOfPerimeter = perimeter/2;
 
         float firstPartOfFormula = (topBase + bottomBase)/(4*Math.abs(topBase - bottomBase));
 
         float expressionUnderRoot = (halfOfPerimeter - topBase)*(halfOfPerimeter - bottomBase)*
                 (halfOfPerimeter - topBase - leftLateral)*(halfOfPerimeter - topBase - rightLateral);
-        float secondPartOfFormula = (float)Math.sqrt(expressionUnderRoot);
 
-        area = firstPartOfFormula*secondPartOfFormula;
+        float secondPartOfFormula = (float)Math.sqrt(expressionUnderRoot);*/
+
+        float height = Math.abs(secondPoint.getY() - firstPoint.getY());
+        area = 0.5f*height*(topBase + bottomBase);
     }
 
     @Override

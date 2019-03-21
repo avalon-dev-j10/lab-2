@@ -30,8 +30,11 @@ public class Rhombus implements Polygon{
 
         this.sizeOfSide = sizeOfSide;
         this.acuteAngle = acuteAngle;
+
         perimeter = sizeOfSide*4;
-        area = (float)(sizeOfSide*sizeOfSide*Math.sin(acuteAngle));
+
+        float angleInRadian = (this.acuteAngle*Ellipse.PI)/180;
+        area = (float)(sizeOfSide*sizeOfSide*Math.sin(angleInRadian));
     }
 
     @Override

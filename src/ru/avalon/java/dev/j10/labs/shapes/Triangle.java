@@ -30,12 +30,14 @@ public class Triangle implements Polygon{
     private float area;
     private int rotation = 0;
 
-    public Triangle(float sizeOfFirstSide, float sizeOfSecondSide, float sizeOfThirdSide){
-        this.sizeOfFirstSide = sizeOfFirstSide;
-        this.sizeOfSecondSide = sizeOfSecondSide;
-        this.sizeOfThirdSide = sizeOfThirdSide;
-        perimeter = this.sizeOfFirstSide + this.sizeOfSecondSide + this.sizeOfThirdSide;
 
+    //Строим треугольник по трем точкам
+    public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint){
+        sizeOfFirstSide = Line.calculateSide(firstPoint, secondPoint);
+        sizeOfSecondSide = Line.calculateSide(secondPoint, thirdPoint);
+        sizeOfThirdSide = Line.calculateSide(thirdPoint, firstPoint);
+
+        perimeter = this.sizeOfFirstSide + this.sizeOfSecondSide + this.sizeOfThirdSide;
 
         //Вычисляем площадь по формуле Герона
         float halfOfPerimeter = perimeter/2;
