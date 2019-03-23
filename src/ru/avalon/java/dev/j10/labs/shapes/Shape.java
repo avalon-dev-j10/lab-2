@@ -21,8 +21,8 @@ public interface Shape {
      *
      * 2. При необходимости, дополните структуру интерфеса.
      */
-
-    /**
+    
+     /**
      * Возвращает площадь фигуры.
      * <p>
      * Площадь плоской фигуры — аддитивная числовая
@@ -48,7 +48,9 @@ public interface Shape {
      *
      * @return угол поворота фигуры.
      */
-    int getRotation();
+    default int getRotation(){
+        return 0;
+    }
 
     /*
      * TODO: изменить определение метотода 'getRotation()'
