@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BC%D0%B1">Ромб</a>
  */
-public class Rhombus implements Shape, Polygon {
+public class Rhombus implements Polygon {
 
     float length; // длинна стороны ромба
      

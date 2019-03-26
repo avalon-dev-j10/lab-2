@@ -13,7 +13,7 @@ import java.util.Random;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%BF%D0%B5%D1%86%D0%B8%D1%8F">Трапеция</a>
  */
-public class Trapezium implements Shape, Polygon {
+public class Trapezium implements Polygon {
 
      float a; // меньшее основание тропеции
      float b; // основание трапеции
